@@ -1,5 +1,6 @@
 .post {
   padding: 3rem 0;
+  font-size: larger;
 
   &-info {
     color: $default-tint;
@@ -15,7 +16,7 @@
   &-title {
     color: $default-shade;
     font-family: $sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 1rem 0;
     text-align: center;
   }
