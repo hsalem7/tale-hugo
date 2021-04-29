@@ -2,8 +2,6 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}">
     {{ partial "head.html" . }}
     <body>
-    <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId={{ .Site.Params.AppId }}&autoLogAppEvents=1" nonce="FLIIntaS"></script>
         {{ partial "header.html" . }}
         {{ block "main" . }}{{ end }}
         {{ partial "footer.html" . }}

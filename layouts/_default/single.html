@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <main>
 	<div class="post">
 		{{ partial "single/post-info.html" . }}
@@ -8,20 +7,30 @@
 		{{ partial "single/header.html" . }}
 
 		{{ .Content }}
+        
+        <div class="fb-like"
+            data-href="{{ .Permalink }}"
+            data-width="" data-layout="standard"
+            data-action="like" data-size="small"
+            data-share="true">
+        </div>
 
 		{{ partial "single/footer.html" . }}
 	</div>
 
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
+            nonce="ruQa7xrC">
+        </script>
+
+        <div class="fb-comments"
+            data-href="{{ .Permalink}}"
+            width="100%"
+            data-numposts="{{ .Site.Params.FacebookCommentsNumPosts }}">
+        </div>
+
 	<div class="pagination">
-		{{- if .PrevPage }}
-		<a href="{{ .PrevPage.RelPermalink }}" class="left arrow">&#8592;</a>
-		{{- end }}
-		{{- if .NextPage }}
-		<a href="{{ .NextPage.RelPermalink }}" class="right arrow">&#8594;</a>
-		{{- end }}
-
-        <div class="fb-comments" data-href="{{ .Permalink }}" data-width="90%" data-numposts="{{ .Site.Params.FacebookCommentsNumPosts }}"></div>
-
 		<a href="#" class="top">Top</a>
 	</div>
 </main>
