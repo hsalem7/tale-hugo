@@ -7,7 +7,7 @@
 		{{ partial "single/header.html" . }}
 
 		{{ .Content }}
-        
+
         <div class="fb-like"
             data-href="{{ .Permalink }}"
             data-width="" data-layout="standard"
@@ -18,19 +18,13 @@
 		{{ partial "single/footer.html" . }}
 	</div>
 
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous"
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
-            nonce="ruQa7xrC">
-        </script>
+  {{- if .Site.Params.WebsitiCommentsId }}
+  <link rel="stylesheet" href="https://websiticomments.s3.eu-central-1.amazonaws.com/public/assets/style/index.css">
+  <div id="app" data-appid="{{ .Site.Params.WebsitiCommentsId }}"></div>
+  <script defer="" src="https://websiticomments.s3.eu-central-1.amazonaws.com/public/bundle.js"></script>
+  {{- end }}
 
-        <div class="fb-comments"
-            data-href="{{ .Permalink}}"
-            width="100%"
-            data-numposts="{{ .Site.Params.FacebookCommentsNumPosts }}">
-        </div>
-
-	<div class="pagination">
+  <div class="pagination">
 		<a href="#" class="top">Top</a>
 	</div>
 </main>
