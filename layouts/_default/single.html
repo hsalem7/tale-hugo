@@ -19,8 +19,8 @@
 	</div>
 
   {{- if .Site.Params.WebsitiCommentsId }}
-  <link rel="stylesheet" href="https://websiticomments.s3.eu-central-1.amazonaws.com/public/assets/style/index.css">
-  <div id="app" data-appid="{{ .Site.Params.WebsitiCommentsId }}"></div>
+  <link rel="stylesheet" href="https://websiticomments.s3.eu-central-1.amazonaws.com/public/styles.css">
+  <div websiti-comments-app-id="{{ .Site.Params.WebsitiCommentsId }}"></div>
   <script defer="" src="https://websiticomments.s3.eu-central-1.amazonaws.com/public/bundle.js"></script>
   {{- end }}
 
