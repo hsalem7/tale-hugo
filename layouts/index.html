@@ -19,6 +19,14 @@
 
 		<span>{{ .Paginator.PageNumber }}</span>
 	</div>
+
+         <div class="footer">
+            {{- if .Site.Params.footerText }}
+            <div class="footer-text">
+                {{ .Site.Params.footerText | safeHTML}}
+            </div>
+    │       {{ end }}
+        </div>
 </main>
 
 {{ end }}
